@@ -25,19 +25,13 @@
 - **Rainbow horizontal rules** — gradient neon line with glow
 - **Cyberpunk grid background** — faint cyan grid overlay
 - **Animated glitch bar** — pulsing rainbow strip on the right edge
-- **Orbitron font** — sci-fi geometric display font for headings
+- **Rajdhani font** — clean geometric sans-serif for headings
 - **Full Obsidian coverage** — callouts, tables, checkboxes, graph view, nav, command palette, tags
 - **Live preview + reading view** — effects work in both modes
 
-## Recommended Font
+## Font
 
-Install [Orbitron](https://fonts.google.com/specimen/Orbitron) for the full sci-fi heading experience:
-
-```bash
-brew install --cask font-orbitron
-```
-
-The theme falls back to Rajdhani → system sans-serif if Orbitron is not installed.
+The theme uses [Rajdhani](https://fonts.google.com/specimen/Rajdhani) (loaded from Google Fonts) for a clean geometric look. Falls back to PingFang SC → system sans-serif.
 
 ## Installation
 
@@ -69,7 +63,7 @@ The theme falls back to Rajdhani → system sans-serif if Orbitron is not instal
 ## Credits
 
 - Original Typora theme by [Channing Walton](https://github.com/channingwalton/typora-themes)
-- Orbitron font by [Matt McInerney](https://fonts.google.com/specimen/Orbitron)
+- Rajdhani font by [Indian Type Foundry](https://fonts.google.com/specimen/Rajdhani)
 
 ## License
 

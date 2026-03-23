@@ -7,7 +7,7 @@
  * INTENSE MODE: Aggressive neon, Matrix terminals, night city vibes.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════════
    DARK THEME — CSS Variables
@@ -274,11 +274,7 @@ body {
   font-synthesis: none;
 }
 
-/* Headings font — Orbitron for that sci-fi look */
-.theme-dark h1, .theme-dark h2, .theme-dark h3,
-.theme-dark h4, .theme-dark h5, .theme-dark h6 {
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
-}
+
 
 .theme-dark {
   font-weight: 400;
@@ -357,7 +353,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   HEADINGS — INTENSE Neon glow + prefixes + Orbitron
+   HEADINGS — INTENSE Neon glow + prefixes
    ═══════════════════════════════════════════════════════════ */
 
 .theme-dark h1, .theme-dark h2, .theme-dark h3,
@@ -486,7 +482,6 @@ body {
     0 0 10px rgba(0, 245, 255, 0.7),
     0 0 20px rgba(0, 245, 255, 0.5),
     0 0 40px rgba(0, 245, 255, 0.3);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
 }
 
 .theme-dark .cm-s-obsidian .cm-header-2 {
@@ -495,7 +490,7 @@ body {
     0 0 10px rgba(255, 0, 110, 0.7),
     0 0 20px rgba(255, 0, 110, 0.5),
     0 0 40px rgba(255, 0, 110, 0.3);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+
 }
 
 .theme-dark .cm-s-obsidian .cm-header-3 {
@@ -504,7 +499,7 @@ body {
     0 0 10px rgba(179, 0, 255, 0.7),
     0 0 20px rgba(179, 0, 255, 0.5),
     0 0 40px rgba(179, 0, 255, 0.3);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+
 }
 
 .theme-dark .cm-s-obsidian .cm-header-4 {
@@ -512,19 +507,19 @@ body {
   text-shadow:
     0 0 10px rgba(57, 255, 20, 0.7),
     0 0 20px rgba(57, 255, 20, 0.5);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+
 }
 
 .theme-dark .cm-s-obsidian .cm-header-5 {
   color: var(--h5-color) !important;
   text-shadow: 0 0 10px rgba(255, 237, 0, 0.5);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+
 }
 
 .theme-dark .cm-s-obsidian .cm-header-6 {
   color: var(--h6-color) !important;
   text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
-  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+
 }
 
 /* ═══════════════════════════════════════════════════════════
