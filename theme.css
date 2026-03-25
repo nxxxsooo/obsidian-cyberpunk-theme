@@ -261,7 +261,7 @@ body {
   --font-interface-theme: "Rajdhani", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-text-theme: "Rajdhani", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-monospace-theme: "Fira Code", "JetBrains Mono", "PingFang SC", monospace;
-  --file-line-width: 900px;
+  --file-line-width: 960px;
 
   --font-ui-smaller: 14px;
   --font-ui-small: 15px;
@@ -278,7 +278,15 @@ body {
 
 .theme-dark {
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.8;
+}
+
+.theme-dark .markdown-preview-view p {
+  margin: 1.2rem 0;
+}
+
+.theme-dark .cm-line {
+  margin: 0.1rem 0;
 }
 
 .theme-dark strong,
@@ -361,7 +369,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 2.5rem 0 1.2rem 0;
 }
 
 /* H1 — Cyan with intense flicker + ▸ prefix */
@@ -570,6 +578,7 @@ body {
   border-radius: var(--radius-m);
   padding: 1.5rem;
   padding-top: 2rem;
+  margin: 1.5rem 0;
   overflow-x: auto;
   position: relative;
   box-shadow:
@@ -661,10 +670,23 @@ body {
 .theme-dark .markdown-preview-view blockquote {
   background-color: var(--blockquote-background-color);
   border-left: 4px solid var(--blockquote-border-color);
-  padding: 12px 16px;
-  margin: 16px 0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
   border-radius: 0 var(--radius-m) var(--radius-m) 0;
   box-shadow: -5px 0 15px rgba(179, 0, 255, 0.25);
+  position: relative;
+}
+
+.theme-dark .markdown-preview-view blockquote::before {
+  content: '\275D';
+  font-size: 2.2rem;
+  color: var(--neon-purple);
+  position: absolute;
+  left: 6px;
+  top: -8px;
+  opacity: 0.25;
+  pointer-events: none;
+  text-shadow: 0 0 8px rgba(179, 0, 255, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -683,7 +705,7 @@ body {
     #00f5ff 80%,
     transparent
   );
-  margin: 2rem 0;
+  margin: 2.5rem 0;
   box-shadow: 0 0 15px rgba(0, 245, 255, 0.5), 0 0 30px rgba(0, 245, 255, 0.2);
 }
 
@@ -695,6 +717,7 @@ body {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid rgba(0, 245, 255, 0.3);
+  margin: 1.5rem 0;
 }
 
 .theme-dark .markdown-preview-view th {
@@ -704,13 +727,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
-  padding: 10px 16px;
+  padding: 12px 18px;
   border: 1px solid rgba(0, 245, 255, 0.2);
   text-align: left;
 }
 
 .theme-dark .markdown-preview-view td {
-  padding: 8px 16px;
+  padding: 10px 18px;
   border: 1px solid rgba(0, 245, 255, 0.1);
 }
 
@@ -734,6 +757,16 @@ body {
 /* ═══════════════════════════════════════════════════════════
    LIST MARKERS
    ═══════════════════════════════════════════════════════════ */
+
+.theme-dark .markdown-preview-view li {
+  margin: 0.4rem 0;
+}
+
+.theme-dark .markdown-preview-view ul,
+.theme-dark .markdown-preview-view ol {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
 
 .theme-dark .markdown-preview-view li::marker {
   color: var(--list-marker-color);
@@ -882,7 +915,7 @@ body {
 .theme-dark .nav-folder-title,
 .theme-dark .nav-file-title {
   border-radius: var(--radius-s);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .theme-dark .nav-folder-title:hover,
@@ -894,7 +927,7 @@ body {
 .theme-dark .nav-file-title.is-active {
   background-color: var(--nav-item-background-active);
   color: var(--nav-item-color-active);
-  border-left: 3px solid #00f5ff;
+  box-shadow: inset 3px 0 0 #00f5ff;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1049,9 +1082,21 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   READABLE LINE WIDTH
+   CONTENT PADDING (Typora-style generous margins)
    ═══════════════════════════════════════════════════════════ */
 
+/* Reading view — edge padding only, no max-width constraint */
+.theme-dark .markdown-preview-view {
+  padding: 1rem 4% !important;
+}
+
+/* Live preview / source — edge padding */
+.theme-dark .markdown-source-view.mod-cm6 .cm-sizer {
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+}
+
+/* If readable line width is ON, respect it */
 .is-readable-line-width .markdown-source-view.mod-cm6 .cm-sizer {
   max-width: var(--file-line-width) !important;
   margin: 0 auto !important;
@@ -1060,10 +1105,6 @@ body {
 .is-readable-line-width .markdown-preview-sizer {
   max-width: var(--file-line-width) !important;
   margin: 0 auto !important;
-}
-
-.markdown-source-view.mod-cm6 .cm-contentContainer {
-  max-width: 100% !important;
 }
 
 /* ═══════════════════════════════════════════════════════════
